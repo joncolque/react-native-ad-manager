@@ -8,6 +8,8 @@
 #include "RCTConvert+GADAdSize.h"
 #import "RNAdManagerUtils.h"
 
+#import <PureLayout/PureLayout.h>
+
 @interface RNAdManagerBannerView () <GADBannerViewDelegate, GADAdSizeDelegate, GADAppEventDelegate>
 
 @property (nonatomic, strong) GAMBannerView *bannerView;
@@ -140,6 +142,10 @@
 
     [self addSubview:bannerView];
 
+    [bannerView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [bannerView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+    [bannerView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    
     _bannerView = bannerView;
 }
 
